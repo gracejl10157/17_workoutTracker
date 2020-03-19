@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 // grace:
 // connect to mongodb using mongoose orm
-mongoose.connect("mongodb://localhost/workout", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
